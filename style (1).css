@@ -1,0 +1,860 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ff9eb5,
+            #ff5c8a 40%,
+            #8f1647 100%
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    color: #333;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+
+    width: 100%;
+
+    padding: 20px;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    margin: auto;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(10px);
+
+    animation:
+        cardEnter 0.8s ease;
+
+}
+
+
+/* =========================
+   CARD ANIMATION
+========================= */
+
+@keyframes cardEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.9);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================
+   EMOJI
+========================= */
+
+.emoji {
+
+    font-size: 70px;
+
+    animation:
+        heartbeat 1.5s infinite;
+
+}
+
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.small-title {
+
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #e91e63;
+
+}
+
+
+h1 {
+
+    margin-top: 12px;
+
+    font-size: 38px;
+
+    color: #d81b60;
+
+}
+
+
+.question {
+
+    margin-top: 20px;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #333;
+
+}
+
+
+.subtext {
+
+    margin-top: 12px;
+
+    color: #777;
+
+}
+
+
+#hint {
+
+    margin-top: 30px;
+
+    font-size: 13px;
+
+    color: #999;
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+
+    margin-top: 35px;
+
+    min-height: 55px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+button {
+
+    border: none;
+
+    padding: 13px 28px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+/* YES */
+
+#yesBtn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4081,
+            #e91e63
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px
+        rgba(233, 30, 99, 0.35);
+
+}
+
+
+#yesBtn:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 12px 30px
+        rgba(233, 30, 99, 0.45);
+
+}
+
+
+/* NO */
+
+#noBtn {
+
+    background: #555555;
+
+    color: #ffffff;
+
+    position: relative;
+
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+#noBtn:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+}
+
+
+.hearts span {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    opacity: 0.7;
+
+    animation:
+        floatHeart
+        linear
+        infinite;
+
+}
+
+
+.hearts span:nth-child(1) {
+
+    left: 5%;
+
+    animation-duration: 8s;
+
+}
+
+
+.hearts span:nth-child(2) {
+
+    left: 18%;
+
+    animation-duration: 11s;
+
+    animation-delay: 2s;
+
+}
+
+
+.hearts span:nth-child(3) {
+
+    left: 32%;
+
+    animation-duration: 9s;
+
+    animation-delay: 1s;
+
+}
+
+
+.hearts span:nth-child(4) {
+
+    left: 48%;
+
+    animation-duration: 12s;
+
+    animation-delay: 3s;
+
+}
+
+
+.hearts span:nth-child(5) {
+
+    left: 63%;
+
+    animation-duration: 8s;
+
+    animation-delay: 2s;
+
+}
+
+
+.hearts span:nth-child(6) {
+
+    left: 76%;
+
+    animation-duration: 10s;
+
+}
+
+
+.hearts span:nth-child(7) {
+
+    left: 88%;
+
+    animation-duration: 13s;
+
+    animation-delay: 4s;
+
+}
+
+
+.hearts span:nth-child(8) {
+
+    left: 95%;
+
+    animation-duration: 9s;
+
+}
+
+
+@keyframes floatHeart {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 0.8;
+
+    }
+
+    to {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+#confetti {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+}
+
+
+/* =========================
+   SUCCESS SCREEN
+========================= */
+
+.success-title {
+
+    color: #e91e63;
+
+    font-size: 40px;
+
+}
+
+
+.success-message {
+
+    margin-top: 20px;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+}
+
+
+.date-box {
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: #fff0f5;
+
+}
+
+
+.date-box label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    color: #d81b60;
+
+}
+
+
+.date-box input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+}
+
+
+.plan-buttons {
+
+    margin-top: 20px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+
+}
+
+
+.plan-btn {
+
+    background: #fff;
+
+    color: #d81b60;
+
+    border: 2px solid #f48fb1;
+
+    padding: 10px 15px;
+
+}
+
+
+.plan-btn.selected {
+
+    background: #e91e63;
+
+    color: white;
+
+}
+
+
+.confirm-btn {
+
+    margin-top: 25px;
+
+    background: #e91e63;
+
+    color: white;
+
+}
+
+
+.final-message {
+
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    color: #555;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .card {
+
+        padding: 35px 20px;
+
+    }
+
+
+    h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .question {
+
+        font-size: 21px;
+
+    }
+
+
+    .emoji {
+
+        font-size: 60px;
+
+    }
+
+
+    button {
+
+        padding: 12px 22px;
+
+        font-size: 16px;
+
+    }
+
+}
+
+/* =========================
+   INTRO SCREEN
+========================= */
+
+.intro-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 50;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ffb6c9,
+            #ff5c8a 45%,
+            #8f1647 100%
+        );
+
+    animation: introIn 0.8s ease;
+
+}
+
+
+@keyframes introIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(1.05);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+.envelope {
+
+    font-size: 90px;
+
+    margin-bottom: 20px;
+
+    animation:
+        envelopeFloat 2s ease-in-out infinite;
+
+}
+
+
+@keyframes envelopeFloat {
+
+    0%, 100% {
+
+        transform: translateY(0)
+                   rotate(-3deg);
+
+    }
+
+    50% {
+
+        transform: translateY(-12px)
+                   rotate(3deg);
+
+    }
+
+}
+
+
+.intro-screen h1 {
+
+    max-width: 600px;
+
+    margin-top: 15px;
+
+    color: white;
+
+    font-size: 35px;
+
+}
+
+
+.intro-text {
+
+    margin-top: 15px;
+
+    color: white;
+
+    font-size: 18px;
+
+}
+
+
+#nameInput {
+
+    width: 100%;
+
+    max-width: 320px;
+
+    margin-top: 25px;
+
+    padding: 14px 18px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+
+    text-align: center;
+
+}
+
+
+#openBtn {
+
+    margin-top: 18px;
+
+    background: white;
+
+    color: #e91e63;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.2);
+
+}
+
+
+#openBtn:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+.intro-screen.hide {
+
+    animation:
+        introOut 0.7s ease forwards;
+
+}
+
+
+@keyframes introOut {
+
+    to {
+
+        opacity: 0;
+
+        transform: scale(1.1);
+
+        visibility: hidden;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .intro-screen h1 {
+
+        font-size: 28px;
+
+    }
+
+    .envelope {
+
+        font-size: 75px;
+
+    }
+
+}
+/* =========================
+   PERSONAL MESSAGE
+========================= */
+
+.made-by {
+
+    margin-top: 10px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    letter-spacing: 0.5px;
+
+}
